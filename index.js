@@ -3,14 +3,7 @@
 const Product = require("./Product");
 const Cart = require("./Cart");
 const Customer = require("./Customer");
-// const Auth = require("./Auth");
-
-
-
-
-
-
-
+const Auth = require("./Auth");
 
 
 
