@@ -6,11 +6,19 @@ class Cart {
     this.total = 0;
   }
 
-  addProduct(product) {
+  addProduct(product, quantity) {
+    if (quantity > product.quantity) {
+      return `I'm sorry there are only ${product.quantity} of this product left`;
+    }
     if (product instanceof Product) {
       this.products.push(product);
-      this.total += product.price;
+      this.total += product.price * quantity;
+      product.quantity -= quantity;
+      if (product.quantity == 0) {
+        product.inStock = false;
+      }
     }
+    return product
   }
 
   removeProduct(product) {
