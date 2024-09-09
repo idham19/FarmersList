@@ -1,3 +1,5 @@
+const { Cart } = require(".");
+
 // 
 class Product {
     constructor(name, price, description) {
