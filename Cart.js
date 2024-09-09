@@ -31,7 +31,15 @@ class Cart {
   clear() {
     let productSize = this.products.length;
     this.products.splice(0, productSize);
-    this.total=0;
+    this.total = 0;
+  }
+  removeItemByName(productName) {
+    for (let i = 0; i < this.products.length; i++) {
+      if (this.products[i].name == productName) {
+        this.products.splice(i, 1);
+        break;
+      }
+    }
   }
 }
 
