@@ -15,11 +15,24 @@ class Cart {
 
   removeProduct(product) {
     if (product >= 0 && product < this.products.length) {
-     const productToRemove = this.products[product];
-     this.products.splice(product,1)
-     this.total-= productToRemove.price
-      } 
-}
+      const productToRemove = this.products[product];
+      this.products.splice(product, 1);
+      this.total -= productToRemove.price;
+    }
+  }
+
+  getTotal() {
+    for (const product of this.products) {
+      this.total += product.price;
+    }
+    return this.total;
+  }
+
+  clear() {
+    let productSize = this.products.length;
+    this.products.splice(0, productSize);
+    this.total=0;
+  }
 }
 
 module.exports = Cart;
